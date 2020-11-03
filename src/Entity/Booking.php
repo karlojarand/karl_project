@@ -1,71 +1,74 @@
 <?php
+
 namespace App\Entity;
+
+use App\Repository\BookingRepository;
 use Doctrine\ORM\Mapping as ORM;
+
 /**
- * @ORM\Entity(repositoryClass="BookingsRepository")
- * @ORM\Table(name="bookings")
+ * @ORM\Entity(repositoryClass=BookingRepository::class)
  */
-class Bookings
+class Booking
 {
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @ORM\Column(name="id", type="integer")
      */
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=40, nullable=false)
+     * @ORM\Column(name="firstName", type="string", length=40, nullable=false)
      */
     private $firstName;
 
     /**
-     * @ORM\Column(type="string", length=40, nullable=false)
+     * @ORM\Column(name="lastName", type="string", length=40, nullable=false)
      */
     private $lastName;
 
     /**
-     * @ORM\Column(type="string", length=10, nullable=false)
+     * @ORM\Column(name="phone", type="string", length=10, nullable=false)
      */
     private $phone;
 
     /**
-     * @ORM\Column(type="string", length=20, nullable=false)
+     * @ORM\Column(name="email", type="string", length=20, nullable=false)
      */
     private $email;
 
     /**
-     * @ORM\Column(type="date", nullable=false)
+     * @ORM\Column(name="birthday", type="date", nullable=false)
      */
-    private $birthdate;
+    private $birthday;
 
     /**
-     * @ORM\Column(type="date", nullable=false)
+     * @ORM\Column(name="startDate", type="date", nullable=false)
      */
     private $startDate;
 
     /**
-     * @ORM\Column(type="date", nullable=false)
+     * @ORM\Column(name="endDate", type="date", nullable=false)
      */
     private $endDate;
 
     /**
-     * @ORM\Column(type="time", nullable=true)
+     * @ORM\Column(name="arrivalTime", type="time", nullable=true)
      */
     private $arrivalTime;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(name="additionalInformation", type="text")
      */
-    private $additionaInformation;
+    private $additionalInformation;
 
     /**
-     * @ORM\Column(type="integer", nullable=false)
+     * @ORM\Column(name="nrOfPeople", type="integer", nullable=false)
      */
-    private $numberOfPeople;
+    private $nrOfPeople;
 
     /**
-     * @ORM\Column(type="string", length=10, nullable=false)
+     * @ORM\Column(name="payingMethod", type="string", length=10, nullable=false)
      */
     private $payingMethod;
 
@@ -112,9 +115,9 @@ class Bookings
     /**
      * @return mixed
      */
-    public function getBirthdate()
+    public function getBirthday()
     {
-        return $this->birthdate;
+        return $this->birthday;
     }
 
     /**
@@ -144,17 +147,17 @@ class Bookings
     /**
      * @return mixed
      */
-    public function getAdditionaInformation()
+    public function getAdditionalInformation()
     {
-        return $this->additionaInformation;
+        return $this->additionalInformation;
     }
 
     /**
      * @return mixed
      */
-    public function getNumberOfPeople()
+    public function getNrOfPeople()
     {
-        return $this->numberOfPeople;
+        return $this->nrOfPeople;
     }
 
     /**
@@ -206,11 +209,11 @@ class Bookings
     }
 
     /**
-     * @param mixed $birthdate
+     * @param mixed $birthday
      */
-    public function setBirthdate($birthdate)
+    public function setBirthday($birthday)
     {
-        $this->birthdate = $birthdate;
+        $this->birthday = $birthday;
     }
 
     /**
@@ -238,19 +241,19 @@ class Bookings
     }
 
     /**
-     * @param mixed $additionaInformation
+     * @param mixed $additionalInformation
      */
-    public function setAdditionaInformation($additionaInformation)
+    public function setAdditionalInformation($additionalInformation)
     {
-        $this->additionaInformation = $additionaInformation;
+        $this->additionalInformation = $additionalInformation;
     }
 
     /**
      * @param mixed $numberOfPeople
      */
-    public function setNumberOfPeople($numberOfPeople)
+    public function setnrOfPeople($nrOfPeople)
     {
-        $this->numberOfPeople = $numberOfPeople;
+        $this->nrOfPeople = $nrOfPeople;
     }
 
     /**
